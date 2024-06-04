@@ -14,8 +14,8 @@
 package XiippySDKBridgeApiClient
 
 import (
-	"XiippyPOSeComSDKLight/Models"
-	"XiippyPOSeComSDKLight/Utils"
+	"github.com/Xiippy/Xiippy.POSeCommSDK.Light_GoLang/Models"
+	"github.com/Xiippy/Xiippy.POSeCommSDK.Light_GoLang/Utils"
 	"bytes"
 	"crypto/tls"
 	"encoding/json"
