@@ -11,7 +11,7 @@
 //
 // *******************************************************************************************
 
-package models
+package Models
 
 // PaymentProcessingRequest represents a request for processing a payment.
 type PaymentProcessingRequest struct {

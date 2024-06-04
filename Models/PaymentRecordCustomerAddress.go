@@ -11,7 +11,7 @@
 //
 // *******************************************************************************************
 
-package models
+package Models
 
 type PaymentRecordCustomerAddress struct {
 	PaymentRecordCustomerAddressID string `json:"PaymentRecordCustomerAddressID"`

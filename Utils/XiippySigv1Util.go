@@ -10,7 +10,7 @@
 // - No secret or passwords or keys must exist in the code when checked in
 //
 // *******************************************************************************************
-package utils
+package Utils
 
 import (
 	"crypto/hmac"

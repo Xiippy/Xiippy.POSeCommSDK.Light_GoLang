@@ -11,7 +11,7 @@
 //
 // *******************************************************************************************
 
-package models
+package Models
 
 type PaymentRecordCustomer struct {
 	CustomerAddress   PaymentRecordCustomerAddress `json:"CustomerAddress"`

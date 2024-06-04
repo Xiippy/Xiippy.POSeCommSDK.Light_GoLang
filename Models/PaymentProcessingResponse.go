@@ -11,7 +11,7 @@
 //
 // *******************************************************************************************
 
-package models
+package Models
 
 type PaymentProcessingResponse struct {
 	ClientSecret        string `json:"ClientSecret"`

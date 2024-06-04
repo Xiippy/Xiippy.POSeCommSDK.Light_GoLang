@@ -11,7 +11,7 @@ A proper factory or provider must instantiate an instance of the interface that 
 
 *******************************************************************************************/
 
-package models
+package Models
 
 type CashPaymentPersisted struct {
 	RandomStatementID string  `json:"RandomStatementID"`

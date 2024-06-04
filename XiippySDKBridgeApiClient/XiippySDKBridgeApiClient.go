@@ -14,8 +14,8 @@
 package XiippySDKBridgeApiClient
 
 import (
-	"XiippyPOSeComSDKLight/models"
-	"XiippyPOSeComSDKLight/utils"
+	"XiippyPOSeComSDKLight/Models"
+	"XiippyPOSeComSDKLight/Utils"
 	"bytes"
 	"crypto/tls"
 	"encoding/json"
@@ -26,9 +26,7 @@ import (
 )
 
 const (
-	XiippyReqSignatureHeader = "XIIPPY-API-SIG-V1"
-	XiippyReqMomentHeader    = "XIIPPY-MOMENT-V1"
-	ApplicationJson          = "application/json"
+	ApplicationJson = "application/json"
 )
 
 type XiippySDKBridgeApiClient struct {
@@ -66,7 +64,7 @@ func NewXiippySDKBridgeApiClient(isTest bool, bridgeAPIKey, bridgeBaseUrl, merch
 	}
 }
 
-func (x *XiippySDKBridgeApiClient) InitiateXiippyPayment(req *models.PaymentProcessingRequest) (*models.PaymentProcessingResponse, error) {
+func (x *XiippySDKBridgeApiClient) InitiateXiippyPayment(req *Models.PaymentProcessingRequest) (*Models.PaymentProcessingResponse, error) {
 	jsonData, err := json.Marshal(req)
 	if err != nil {
 		return nil, err
@@ -83,7 +81,7 @@ func (x *XiippySDKBridgeApiClient) InitiateXiippyPayment(req *models.PaymentProc
 	httpReq.Header.Set("Accept", ApplicationJson)
 
 	// Add the authentication signature headers
-	utils.AddXiippyV1RequestSignatureToClient(string(jsonData), httpReq, x.BridgeAPIKey)
+	Utils.AddXiippyV1RequestSignatureToClient(string(jsonData), httpReq, x.BridgeAPIKey)
 
 	resp, err := x.client.Do(httpReq)
 	if err != nil {
@@ -95,7 +93,7 @@ func (x *XiippySDKBridgeApiClient) InitiateXiippyPayment(req *models.PaymentProc
 		return nil, errors.New(fmt.Sprintf("Response Code: %d Body: %s", resp.StatusCode, reqBody))
 	}
 
-	var responseObj models.PaymentProcessingResponse
+	var responseObj Models.PaymentProcessingResponse
 	if err := json.NewDecoder(resp.Body).Decode(&responseObj); err != nil {
 		return nil, err
 	}

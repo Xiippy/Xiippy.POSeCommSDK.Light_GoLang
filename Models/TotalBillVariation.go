@@ -12,7 +12,7 @@ A proper factory or provider must instantiate an instance of the interface that 
 
 ******************************************************************************************
 */
-package models
+package Models
 
 type TotalBillVariation struct {
 	TotalBillVariationID                                 string   `json:"TotalBillVariationID"`

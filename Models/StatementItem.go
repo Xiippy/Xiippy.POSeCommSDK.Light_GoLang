@@ -11,7 +11,7 @@ A proper factory or provider must instantiate an instance of the interface that 
 
 *******************************************************************************************/
 //using SQLite;
-package models
+package Models
 
 import "time"
 
